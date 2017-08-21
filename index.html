@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="Main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+</head>
+<body>
+    <div class="auth">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" id="txtEmail" class="validate">
+                    <label for="txtEmail" class="active">Email</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="password" id="txtPass">
+                    <label for="txtPass" class="active">Password</label>
+                </div>
+                <button id="btnLogin" class="waves-effect waves-light btn">Login</button>
+                <button id="btnSignUp" class="waves-effect waves-light btn">SignUp</button>
+                <button id="btnLogOut" class="waves-effect waves-light btn">Logout</button>
+                <input id="uid">
+
+            </div>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+
+</html>
