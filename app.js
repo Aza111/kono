@@ -40,7 +40,7 @@
         const pass = txtPass.value;
         const auth = firebase.auth();
         //Sign in
-        const promise  = auth.createUserWithEmailAndPassword(email, pass);
+        const promise = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e => console.log(e.message));
       });
     
