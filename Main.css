@@ -1,4 +1,4 @@
-.auth
+.autho
 {
     display: flex;
     min-height: 100vh;
@@ -8,4 +8,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: #1565c0;
 }
+
+
