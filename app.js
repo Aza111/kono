@@ -23,13 +23,14 @@
     const uid = document.getElementById('uid');
       
     const txtName = document.getElementById('txtName');
-    const txtSurname = document.getElementById('txtSurname');
     const btnReg = document.getElementById('btnReg');
     const btnLog = document.getElementById('btnLog');
     const login = document.getElementById('login');
     const register = document.getElementById('register');
       
+    var user = firebase.auth().currentUser;
     var database = firebase.database();
+    
       
     //Add login Event
         btnLogin.addEventListener('click', e=>{
@@ -63,7 +64,11 @@
       firebase.auth().onAuthStateChanged(firebaseUser => {
           if(firebaseUser){
             console.log(firebaseUser);
+            user.updateProfile({
+            displayName: txtName.value,
+            });
             database.ref('users/'+ firebaseUser['uid']).update({
+            name: firebaseUser['displayName'],
             profile_picture : 'imageUrl'
             });
             authPage.classList.add('hide');
@@ -71,8 +76,8 @@
              }
           else{
             console.log('not logged in');
-             authPage.classList.remove('hide');
-             mainPage.classList.add('hide');
+            authPage.classList.remove('hide');
+            mainPage.classList.add('hide');
           }
       });
       
