@@ -62,7 +62,6 @@
       // Add a realtime listener
       firebase.auth().onAuthStateChanged(firebaseUser => {
           if(firebaseUser){
-            uid.value =  firebaseUser['uid'];
             console.log(firebaseUser);
             database.ref('users/'+ firebaseUser['uid']).update({
             profile_picture : 'imageUrl'
