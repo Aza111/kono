@@ -12,6 +12,8 @@
   };
   firebase.initializeApp(config);
 
+    const authPage = document.getElementById('authPage');
+    const mainPage = document.getElementById('mainPage');
     // Get elements
     const txtEmail = document.getElementById('txtEmail');
     const txtPass = document.getElementById('txtPass');
@@ -19,6 +21,13 @@
     const btnSignUp = document.getElementById('btnSignUp');
     const btnLogOut = document.getElementById('btnLogOut');
     const uid = document.getElementById('uid');
+      
+    const txtName = document.getElementById('txtName');
+    const txtSurname = document.getElementById('txtSurname');
+    const btnReg = document.getElementById('btnReg');
+    const btnLog = document.getElementById('btnLog');
+    const login = document.getElementById('login');
+    const register = document.getElementById('register');
       
     var database = firebase.database();
       
@@ -56,23 +65,26 @@
             uid.value =  firebaseUser['uid'];
             console.log(firebaseUser);
             database.ref('users/'+ firebaseUser['uid']).update({
-            email: txtEmail.value,
             profile_picture : 'imageUrl'
             });
-            btnLogOut.classList.remove('hide');
-            txtEmail.classList.add('hide');
-            txtPass.classList.add('hide');
-            btnLogin.classList.add('hide');
-            btnSignUp.classList.add('hide');
+            authPage.classList.add('hide');
+            mainPage.classList.remove('hide');
              }
           else{
             console.log('not logged in');
-            btnLogOut.classList.add('hide');
-            txtEmail.classList.remove('hide');
-            txtPass.classList.remove('hide');
-            btnLogin.classList.remove('hide');
-            btnSignUp.classList.remove('hide');
+             authPage.classList.remove('hide');
+             mainPage.classList.add('hide');
           }
+      });
+      
+      btnReg.addEventListener('click', e=>{
+          login.classList.add('hide');
+          register.classList.remove('hide');
+      });
+      
+       btnLog.addEventListener('click', e=>{
+          login.classList.remove('hide');
+          register.classList.add('hide');
       });
       
            

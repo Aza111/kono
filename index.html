@@ -10,11 +10,11 @@
     
 </head>
 <body>
-    <div class="autho">
+    <div id="authPage">
         <div class="col s12">
-            <div class="card">
+            <div class="card" id="login">
                 <div class="card-content blue lighten-5">
-                <span class="card-title blue-text">Logging in</span>
+                <span class="card-title blue-text">Login</span>
                 <div class="input-field col s12">
                     <input type="text" id="txtEmail">
                     <label for="txtEmail">Email</label>
@@ -24,12 +24,40 @@
                     <label for="txtPass">Password</label>
                 </div>
                 <button id="btnLogin" class="waves-effect light-blue darken-3 btn">Login</button>
-                <button id="btnSignUp" class="waves-effect light-blue darken-3 btn">SignUp</button>
-                <button id="btnLogOut" class="waves-effect light-blue darken-3 btn">Logout</button>
-                <input id="uid">
+                <button id="btnReg" class="waves-effect light-blue darken-3 btn">Registration</button>
                 </div>      
             </div>
+            <div class="card hide" id="register">
+                <div class="card-content blue lighten-5">
+                <span class="card-title blue-text">Registration</span>
+                <div class="input-field col s12">
+                    <input type="text" id="txtName">
+                    <label for="txtName">Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" id="txtSurname">
+                    <label for="txtSurname">Surname</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" id="txtEmail">
+                    <label for="txtEmail">Email</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="password" id="txtPass">
+                    <label for="txtPass">Password</label>
+                </div>
+                <button id="btnSignUp" class="waves-effect light-blue darken-3 btn">SignUp</button>
+                <button id="btnLog" class="waves-effect light-blue darken-3 btn">Login</button>
+                </div> 
+                
+            </div>
         </div>
+    </div>
+    
+    
+    <div id="mainPage" class="hide">
+     <button id="btnLogOut" class="waves-effect light-blue darken-3 btn">Logout</button>
+    
     </div>
         <script src="app.js"></script>
 </body>
