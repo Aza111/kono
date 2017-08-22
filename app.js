@@ -1,18 +1,16 @@
   (function(){
 
-
+  
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyBj8XzZXuXGeGGX2n-QyKeH8aT9337lByI",
-    authDomain: "web-quickstart-3f106.firebaseapp.com",
-    databaseURL: "https://web-quickstart-3f106.firebaseio.com",
-    projectId: "web-quickstart-3f106",
-    storageBucket: "web-quickstart-3f106.appspot.com",
-    messagingSenderId: "258391919909"
+    apiKey: "AIzaSyAr_YxvV04UPsL3Th8oU8sXeIoJNlHs7Do",
+    authDomain: "kono-f4f2d.firebaseapp.com",
+    databaseURL: "https://kono-f4f2d.firebaseio.com",
+    projectId: "kono-f4f2d",
+    storageBucket: "kono-f4f2d.appspot.com",
+    messagingSenderId: "177948466004"
   };
   firebase.initializeApp(config);
-
-
 
     // Get elements
     const txtEmail = document.getElementById('txtEmail');
@@ -25,7 +23,7 @@
     var database = firebase.database();
       
     //Add login Event
-        btnLogin.addEventListener('click', e=> {
+        btnLogin.addEventListener('click', e=>{
         //Get email and pass
         const email = txtEmail.value;
         const pass = txtPass.value;
@@ -35,7 +33,6 @@
         promise.catch(e => console.log(e.message));
         
     });
-      
       //Add signup event
       btnSignUp.addEventListener('click', e=> {
         //Get email and pass
@@ -58,9 +55,23 @@
           if(firebaseUser){
             uid.value =  firebaseUser['uid'];
             console.log(firebaseUser);
+            database.ref('users/'+ firebaseUser['uid']).update({
+            email: txtEmail.value,
+            profile_picture : imageUrl
+            });
+            btnLogOut.classList.remove('hide');
+            txtEmail.classList.add('hide');
+            txtPass.classList.add('hide');
+            btnLogin.classList.add('hide');
+            btnSignUp.classList.add('hide');
              }
           else{
-              console.log('not logged in');
+            console.log('not logged in');
+            btnLogOut.classList.add('hide');
+            txtEmail.classList.remove('hide');
+            txtPass.classList.remove('hide');
+            btnLogin.classList.remove('hide');
+            btnSignUp.classList.remove('hide');
           }
       });
       
