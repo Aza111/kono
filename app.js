@@ -26,7 +26,9 @@
     const btnReg = document.getElementById('btnReg');
     const btnLog = document.getElementById('btnLog');
     const login = document.getElementById('login');
-    const register = document.getElementById('register');
+    const registerLabel = document.getElementById('registerLabel');
+    const loginLabel = document.getElementById('loginLabel');
+    const divName = document.getElementById('divName');
       
     var user = firebase.auth().currentUser;
     var database = firebase.database();
@@ -79,13 +81,26 @@
       });
       
       btnReg.addEventListener('click', e=>{
-          login.classList.add('hide');
-          register.classList.remove('hide');
+          btnReg.classList.add('hide');
+          btnLogin.classList.add('hide');
+          loginLabel.classList.add('hide');
+          
+          btnLog.classList.remove('hide');
+          btnSignUp.classList.remove('hide');
+          registerLabel.classList.remove('hide');
+          divName.classList.remove('hide');
+          
       });
       
        btnLog.addEventListener('click', e=>{
-          login.classList.remove('hide');
-          register.classList.add('hide');
+          btnReg.classList.remove('hide');
+          btnLogin.classList.remove('hide');
+          loginLabel.classList.remove('hide');          
+          
+          btnLog.classList.add('hide');
+          btnSignUp.classList.add('hide');
+          registerLabel.classList.add('hide');
+          divName.classList.add('hide');
       });
       
            

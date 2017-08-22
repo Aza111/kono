@@ -11,28 +11,13 @@
 </head>
 <body>
     <div id="authPage">
-        <div class="row">
+      <div class="row">
         <div class="col s12">
-            <div class="card" id="login">
+            <div class="card">
                 <div class="card-content blue lighten-5">
-                <span class="card-title blue-text">Login</span>
-                <div class="input-field col s12">
-                    <input type="text" id="txtEmail">
-                    <label for="txtEmail">Email</label>
-                </div>
-                <div class="input-field col s12">
-                    <input type="password" id="txtPass">
-                    <label for="txtPass">Password</label>
-                </div>
-                <button id="btnLogin" class="waves-effect light-blue darken-3 btn">Login</button>
-                or
-                <button id="btnReg" class="waves-effect light-blue darken-1 btn">Registration</button>
-                </div>      
-            </div>
-            <div class="card hide" id="register">
-                <div class="card-content blue lighten-5">
-                <span class="card-title blue-text">Registration</span>
-                <div class="input-field col s12">
+                <span id="loginLabel" class="card-title blue-text">Login</span>
+                <span id="registerLabel" class="card-title blue-text hide">Registration</span>
+                <div id="divName" class="input-field col s12 hide">
                     <input type="text" id="txtName">
                     <label for="txtName">Name</label>
                 </div>
@@ -44,14 +29,16 @@
                     <input type="password" id="txtPass">
                     <label for="txtPass">Password</label>
                 </div>
-                <button id="btnSignUp" class="waves-effect light-blue darken-3 btn">SignUp</button>
+                <button id="btnLogin" class="waves-effect light-blue darken-3 btn">Login</button>
+                <button id="btnSignUp" class="waves-effect light-blue darken-3 btn hide">SignUp</button>
                 or
-                <button id="btnLog" class="waves-effect light-blue darken-1 btn">Login</button>
+                <button id="btnReg" class="waves-effect light-blue darken-1 btn">Registration</button>
+                <button id="btnLog" class="waves-effect light-blue darken-1 btn hide">Login</button>
+                </div>
                 </div> 
-                
             </div>
         </div>
-        </div>
+            
     </div>
     
     
