@@ -20,7 +20,7 @@
     const btnLogOut = document.getElementById('btnLogOut');
     const uid = document.getElementById('uid');
       
-   
+ 
       
     //Add login Event
         btnLogin.addEventListener('click', e=>{
@@ -55,15 +55,12 @@
           if(firebaseUser){
             uid.value =  firebaseUser['uid'];
             console.log(firebaseUser);
-            database.ref('users/'+ firebaseUser['uid']).update({
-            email: txtEmail.value,
-            profile_picture : imageUrl
-            });
+           
           
              }
           else{
             console.log('not logged in');
-            
+           
           }
       });
       
