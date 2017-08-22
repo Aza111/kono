@@ -20,7 +20,7 @@
     const btnLogOut = document.getElementById('btnLogOut');
     const uid = document.getElementById('uid');
       
-    var database = firebase.database();
+   
       
     //Add login Event
         btnLogin.addEventListener('click', e=>{
@@ -59,19 +59,11 @@
             email: txtEmail.value,
             profile_picture : imageUrl
             });
-            btnLogOut.classList.remove('hide');
-            txtEmail.classList.add('hide');
-            txtPass.classList.add('hide');
-            btnLogin.classList.add('hide');
-            btnSignUp.classList.add('hide');
+          
              }
           else{
             console.log('not logged in');
-            btnLogOut.classList.add('hide');
-            txtEmail.classList.remove('hide');
-            txtPass.classList.remove('hide');
-            btnLogin.classList.remove('hide');
-            btnSignUp.classList.remove('hide');
+            
           }
       });
       
