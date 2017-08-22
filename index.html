@@ -4,24 +4,32 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="Main.css">
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-    
-   
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="materialize/js/materialize.js"></script>
+    <link rel="stylesheet" href="materialize/css/materialize.css">
     
 </head>
 <body>
     <div class="autho">
-        
+        <form class="col s12">
+            <div class="card">
+                <div class="card-content blue lighten-5">
+                <span class="card-title blue-text">Logging in</span>
+                <div class="input-field col s12">
                     <input type="text" id="txtEmail">
-                   
-               
+                    <label for="txtEmail">Email</label>
+                </div>
+                <div class="input-field col s12">
                     <input type="password" id="txtPass">
-                    
-               
+                    <label for="txtPass">Password</label>
+                </div>
                 <button id="btnLogin" class="waves-effect light-blue darken-3 btn">Login</button>
                 <button id="btnSignUp" class="waves-effect light-blue darken-3 btn">SignUp</button>
                 <button id="btnLogOut" class="waves-effect light-blue darken-3 btn hide">Logout</button>
                 <input id="uid">
-            
+                </div>      
+            </div>
+        </form>
     </div>
         <script src="app.js"></script>
 </body>
