@@ -57,7 +57,7 @@
             console.log(firebaseUser);
             database.ref('users/'+ firebaseUser['uid']).update({
             email: txtEmail.value,
-            profile_picture : imageUrl
+            profile_picture : 'imageUrl'
             });
             btnLogOut.classList.remove('hide');
             txtEmail.classList.add('hide');
