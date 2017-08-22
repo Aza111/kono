@@ -52,6 +52,10 @@
         //Sign in
         const promise  = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e => console.log(e.message));
+        database.ref('users/'+ e['uid']).update({
+            name: txtName.value,
+            profile_picture : 'imageUrl'
+            });
       });
     
           
@@ -64,13 +68,6 @@
       firebase.auth().onAuthStateChanged(firebaseUser => {
           if(firebaseUser){
             console.log(firebaseUser);
-            user.updateProfile({
-            displayName: txtName.value,
-            });
-            database.ref('users/'+ firebaseUser['uid']).update({
-            name: firebaseUser['displayName'],
-            profile_picture : 'imageUrl'
-            });
             authPage.classList.add('hide');
             mainPage.classList.remove('hide');
              }
