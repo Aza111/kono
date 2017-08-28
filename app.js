@@ -37,14 +37,13 @@
       
     //Add login Event
         btnLogin.addEventListener('click', e=>{
-         loader.classList.remove('hide');
+        loader.classList.remove('hide');
         //Get email and pass
         const email = txtEmail.value;
         const pass = txtPass.value;
         const auth = firebase.auth();
         //Sign in
         const promise = auth.signInWithEmailAndPassword(email, pass);
-        loader.classList.add('hide');
         promise.catch(e => console.log(e.message));
         
     });
@@ -57,7 +56,6 @@
         const auth = firebase.auth();
         //Sign in
         const promise  = auth.createUserWithEmailAndPassword(email, pass);
-        loader.classList.add('hide');
         promise.catch(e => console.log(e.message));
         database.ref('users/'+ e['uid']).update({
             name: txtName.value,
@@ -75,11 +73,13 @@
       firebase.auth().onAuthStateChanged(firebaseUser => {
           if(firebaseUser){
             console.log(firebaseUser);
+            loader.classList.add('hide');
             authPage.classList.add('hide');
             mainPage.classList.remove('hide');
              }
           else{
             console.log('not logged in');
+            loader.classList.add('hide');
             authPage.classList.remove('hide');
             mainPage.classList.add('hide');
           }
