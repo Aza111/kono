@@ -33,9 +33,11 @@
     var user = firebase.auth().currentUser;
     var database = firebase.database();
     
+    const loader = document.getElementById('loader');
       
     //Add login Event
         btnLogin.addEventListener('click', e=>{
+         loader.classList.remove('hide');
         //Get email and pass
         const email = txtEmail.value;
         const pass = txtPass.value;
@@ -47,6 +49,7 @@
     });
       //Add signup event
       btnSignUp.addEventListener('click', e=> {
+        loader.classList.remove('hide');
         //Get email and pass
         const email = txtEmail.value;
         const pass = txtPass.value;
@@ -68,6 +71,7 @@
       
       // Add a realtime listener
       firebase.auth().onAuthStateChanged(firebaseUser => {
+          loader.classList.add('hide');
           if(firebaseUser){
             console.log(firebaseUser);
             authPage.classList.add('hide');
