@@ -45,7 +45,7 @@
         //Sign in
         const promise = auth.signInWithEmailAndPassword(email, pass);
         promise.catch(e => console.log(e.message));
-        
+        loader.classList.add('hide');
     });
       //Add signup event
       btnSignUp.addEventListener('click', e=> {
@@ -57,6 +57,7 @@
         //Sign in
         const promise  = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e => console.log(e.message));
+        loader.classList.add('hide');
         database.ref('users/'+ e['uid']).update({
             name: txtName.value,
             profile_picture : 'imageUrl'
@@ -71,7 +72,6 @@
       
       // Add a realtime listener
       firebase.auth().onAuthStateChanged(firebaseUser => {
-          loader.classList.add('hide');
           if(firebaseUser){
             console.log(firebaseUser);
             authPage.classList.add('hide');
