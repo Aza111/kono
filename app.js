@@ -44,8 +44,9 @@
         const auth = firebase.auth();
         //Sign in
         const promise = auth.signInWithEmailAndPassword(email, pass);
-        promise.catch(e => console.log(e.message));
         loader.classList.add('hide');
+        promise.catch(e => console.log(e.message));
+        
     });
       //Add signup event
       btnSignUp.addEventListener('click', e=> {
@@ -56,8 +57,8 @@
         const auth = firebase.auth();
         //Sign in
         const promise  = auth.createUserWithEmailAndPassword(email, pass);
-        promise.catch(e => console.log(e.message));
         loader.classList.add('hide');
+        promise.catch(e => console.log(e.message));
         database.ref('users/'+ e['uid']).update({
             name: txtName.value,
             profile_picture : 'imageUrl'
