@@ -1,14 +1,29 @@
 #authPage
 {
-    display: flex;
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
-    padding: 0;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: #1565c0;
+    padding:0;
+    margin: 0 ;
+    background: rgb(32, 39, 45);
+}
+
+#logo
+{
+    color: #ffcc80 ;
+    opacity: 0.8;
+    width: 500px;
+}
+
+#bckg_logo
+{
+ width: 500px;
+}
+
+#auth
+{
+  
+    margin-top: 10vh
+    
 }
 
 

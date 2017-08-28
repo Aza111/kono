@@ -6083,9 +6083,9 @@ input[type=tel]:not(.browser-default):focus:not([readonly]),
 input[type=number]:not(.browser-default):focus:not([readonly]),
 input[type=search]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #01579b;
-  -webkit-box-shadow: 0 1px 0 0 #01579b;
-          box-shadow: 0 1px 0 0 #01579b;
+  border-bottom: 1px solid #26a69a; /*Selected border color*/
+  -webkit-box-shadow: 0 1px 0 0 #26a69a;
+          box-shadow: 0 1px 0 0 #26a69a;
 }
 
 input:not([type]):focus:not([readonly]) + label,
@@ -6101,7 +6101,7 @@ input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
 input[type=number]:not(.browser-default):focus:not([readonly]) + label,
 input[type=search]:not(.browser-default):focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #01579b;
+  color: #26a69a; /*Selected label color*/
 }
 
 input:not([type]).validate + label,
@@ -6354,7 +6354,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
 }
 
 .input-field label {
-  color: #0277bd;
+  color: rgb(147, 190, 225); /*Input's color*/
   position: absolute;
   top: 0;
   left: 0;
