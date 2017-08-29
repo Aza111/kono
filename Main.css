@@ -4,27 +4,28 @@
     width: 100%;
     padding:0;
     margin: 0 ;
-    background: rgb(32, 39, 45);
+    background:  linear-gradient(to top left, #fefcea, #12913e, #32de6e, #12913e);
+    font-family: 'Lobster', cursive;
 }
 
 #logo
 {
     color: #ffcc80 ;
     opacity: 0.8;
-    width: 500px;
+    width: 400px;
 }
 
 #bckg_logo
 {
- width: 500px;
+    width: 300px;
 }
 
-#auth
+h2
 {
-    margin-top: 10vh
+
+font-family: 'Lobster', cursive;
+
+
+
 }
 
-#loader
-{
-   
-}
