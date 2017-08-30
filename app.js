@@ -90,7 +90,9 @@
             authPage.classList.add('hide');
             mainPage.classList.remove('hide');
             
-            profilePhoto.src= firebase.database().ref('users/' + firebaseUser.uid + '/profile_picture').once('profilePhoto');
+            firebase.database().ref('users/' + firebaseUser.uid ).once('value').then(function(snapshot){
+            profilePhoto.src = snapshot.val().profilePhoto    
+            });
              }
           
           
