@@ -34,6 +34,7 @@
     var database = firebase.database();
     
     const loader = document.getElementById('loader');
+    var reg = false;
       
     //Add login Event
         btnLogin.addEventListener('click', e=>{
@@ -57,10 +58,7 @@
         //Sign in
         const promise  = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e => console.log(e.message));
-        database.ref('users/'+ e['uid']).update({
-            name: txtName.value,
-            profile_picture : 'imageUrl'
-            });
+        reg=true;
       });
     
           
@@ -72,12 +70,26 @@
       // Add a realtime listener
       firebase.auth().onAuthStateChanged(firebaseUser => {
           if(firebaseUser){
+            if(reg == true)
+            {
+            //Create database
+            database.ref('users/'+ firebaseUser['uid']).update({
+            name: txtName.value,
+            email: txtEmail.value,
+            password: txtPass.value,
+            profile_picture : 'https://firebasestorage.googleapis.com/v0/b/kono-f4f2d.appspot.com/o/user.png?alt=media&token=0d87b984-8a55-4bd9-8b25-dd95f4acbf44'
+            });
+            };
+              
+              
+            //Change UI
             console.log(firebaseUser);
             loader.classList.add('hide');
             authPage.classList.add('hide');
             mainPage.classList.remove('hide');
              }
           else{
+            //Change UI
             console.log('not logged in');
             loader.classList.add('hide');
             authPage.classList.remove('hide');
