@@ -8,16 +8,17 @@
     <script src="materialize/js/materialize.js"></script>
     <link rel="stylesheet" href="materialize/css/materialize.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="animate.css" rel="stylesheet">
 </head>
 <body>
     <div id="authPage">
-    <div id="logo">
+    <div id="logo" class="animated bounceIn">
         <img src="logo.png" id="bckg_logo">
         <h2>STRICT DUCK</h2>
     </div>
       <div class="row">
         <div class="col s12 m8 l6 offset-m2 offset-l3">
-            <div class="card" id="auth">
+            <div class="card animated bounceIn" id="auth">
                 <div class="card-content ">
                 <span id="loginLabel" class="card-title cyan-text">Login</span>
                 <span id="registerLabel" class="card-title cyan-text hide">Registration</span>
@@ -53,7 +54,17 @@
     
     
     <div id="mainPage" class="hide">
-     <button id="btnLogOut" class="waves-effect orange lighten-3 btn">Logout</button>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center"><img src="logo.png"></a>
+      <ul id="nav-mobile" class="hide-on-med-and-down">
+        <li><a href="#">Desks</a></li>
+        <li><img id="profilePhoto">Account</li>
+        <button id="btnLogOut" class="waves-effect orange lighten-3 btn">Logout</button>
+      </ul>
+    </div>
+  </nav>
+    
     
     </div>
         <script src="app.js"></script>
